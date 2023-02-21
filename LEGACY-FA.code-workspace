@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": "../prototype"
+    },
+    {
+      "path": "../../YG/portfolio"
+    },
+    {
+      "path": "../../YG/Angular/Roadmap/udemy/auth-08-finished"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "prototype"
+  }
+}
