@@ -1,1 +1,49 @@
-<router-outlet></router-outlet>
+<div class="dashboard-container">
+  <div class="sidebar">
+    <div class="sidebar-logo">Legacy FA</div>
+    <span class="sidebar-line"></span>
+
+    <div class="sidebar-menu">
+      <ul>
+        <li class="menu-list">
+          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="menu-list" *ngIf="['admin', 'agent'].includes(userRole)">
+          <a routerLink="/agent" routerLinkActive="active">Agent</a>
+        </li>
+        <li class="menu-list">
+          <a routerLink="/submmit" routerLinkActive="active">Submmit</a>
+        </li>
+        <li class="menu-list" *ngIf="['admin', 'staff'].includes(userRole)">
+          <a routerLink="/payroll" routerLinkActive="active">Payroll</a>
+        </li>
+        <li class="menu-list" *ngIf="['admin'].includes(userRole)">
+          <a routerLink="/staff" routerLinkActive="active">Staff</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-footer">
+      <a (click)="logout()"> Something </a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main__header">
+      <div class="main__header-title">Title</div>
+      <div class="main__header-setting">
+        <button class="btn-setting" (click)="settingOpen()">button</button>
+        <div class="setting__container" [ngClass]="{ 'opacity-1': setting }">
+          <button class="setting__container-btn">rofile</button>
+          <button class="setting__container-btn">Account Settings</button>
+          <button class="setting__container-btn">Disable Alerts</button>
+          <button class="setting__container-btn" (click)="logout()">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="main__content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
