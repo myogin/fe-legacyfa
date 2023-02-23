@@ -18,6 +18,7 @@ import {
 } from '@nebular/auth';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout.compon
         },
       },
     }),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

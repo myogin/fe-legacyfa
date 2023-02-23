@@ -6,19 +6,49 @@
     <div class="sidebar-menu">
       <ul>
         <li class="menu-list">
-          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li class="menu-list" *ngIf="['admin', 'agent'].includes(userRole)">
-          <a routerLink="/agent" routerLinkActive="active">Agent</a>
+          <a routerLink="/dashboard" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Dashboard</a
+          >
         </li>
         <li class="menu-list">
-          <a routerLink="/submmit" routerLinkActive="active">Submmit</a>
+          <a routerLink="/agent" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> EPFR</a
+          >
         </li>
-        <li class="menu-list" *ngIf="['admin', 'staff'].includes(userRole)">
-          <a routerLink="/payroll" routerLinkActive="active">Payroll</a>
+        <li class="menu-list">
+          <a routerLink="/submmit" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Submission</a
+          >
         </li>
-        <li class="menu-list" *ngIf="['admin'].includes(userRole)">
-          <a routerLink="/staff" routerLinkActive="active">Staff</a>
+        <li class="menu-list">
+          <a routerLink="/payroll" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Client</a
+          >
+        </li>
+        <li class="menu-list">
+          <a routerLink="/staff" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Product</a
+          >
+        </li>
+        <li class="menu-list">
+          <a routerLink="/staff" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Provider</a
+          >
+        </li>
+        <li class="menu-list">
+          <a routerLink="/staff" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Payroll</a
+          >
+        </li>
+        <li class="menu-list">
+          <a routerLink="/staff" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> User Account</a
+          >
+        </li>
+        <li class="menu-list">
+          <a routerLink="/staff" routerLinkActive="active"
+            ><fa-icon [icon]="faHome"></fa-icon> Sales associates</a
+          >
         </li>
       </ul>
     </div>
