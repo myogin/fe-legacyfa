@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbAuthService, NbTokenService } from '@nebular/auth';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-// import { faHouseUser } from '@fortawesome/free-regular-svg-icons';
+import {
+  faHome,
+  faBars,
+  faThumbtack,
+  faAngleRight,
+  faAngleDown,
+  faEllipsisH,
+} from '@fortawesome/free-solid-svg-icons';
+import { faFile, faUser } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-dashboard-layout',
   templateUrl: './dashboard-layout.component.html',
@@ -11,7 +18,16 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 export class DashboardLayoutComponent implements OnInit {
   setting: boolean = false;
   userRole: string | any = '';
+
+  // icon
   faHome = faHome;
+  faBars = faBars;
+  faPin = faThumbtack;
+  faAngleRight = faAngleRight;
+  faAngleDown = faAngleDown;
+  faFile = faFile;
+  faUser = faUser;
+  faEllipsis = faEllipsisH;
 
   constructor(
     private nbTokenService: NbTokenService,
