@@ -11,8 +11,7 @@
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* GOOGLE FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 /* VARIABLE CSS */
 :root {
   --header-height: 3rem;
@@ -21,10 +20,10 @@
   /* Color mode HSL(hue, saturation, lightness) */
   --hue: 0;
   --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 20%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 46%);
-  --body-color: hsl(var(--hue), var(--sat), 98%);
+  --title-color: #262e4a;
+  --title-color-dark: #000000;
+  --text-color: #262e4a;
+  --body-color: #262e4a;
   --container-color: #fff;
 
   /* Font and Typography */
@@ -103,6 +102,7 @@ h2,
 h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
+  line-height: 1.2;
 }
 
 ul {

@@ -53,16 +53,16 @@
       font-size: 0.75rem;
 
       .menu {
-        --bs-menu-link-height: 3rem;
+        --bs-menu-link-height: 2.5rem;
         --bs-menu-link-padding-x: 1rem;
         --bs-menu-link-bg: transparent;
-        --bs-menu-link-color: var(--bs-text-level-1);
-        --bs-menu-link-hover-color: var(--bs-text-level-1);
+        --bs-menu-link-color: #96a0b5;
+        --bs-menu-link-hover-color: #000000;
         --bs-menu-link-active-bg: #2196f3;
         --bs-menu-link-active-color: #fff;
-        --bs-menu-link-font-size: 1rem;
+        --bs-menu-link-font-size: 0.75rem;
         --bs-menu-link-font-weight: 400;
-        --bs-menu-link-icon-dimension: 2.5rem;
+        --bs-menu-link-icon-dimension: 2.25rem;
         --bs-menu-link-icon-size: 1.25rem;
         --bs-menu-link-text-spacer: 0.5rem;
         --bs-menu-link-addon-spacer: 0.5rem;
@@ -71,48 +71,62 @@
         --bs-menu-section-height: 3rem;
         --bs-menu-section-spacer: 0.5rem;
         --bs-menu-section-text-spacer: 1rem;
-        --bs-menu-section-color: var(--bs-text-level-1);
-        --bs-menu-section-font-size: 1rem;
-        --bs-menu-section-font-weight: 500;
-
-        .menu-item-link {
+        --bs-menu-section-color: #96a0b5;
+        --bs-menu-section-font-size: 0.75rem;
+        --bs-menu-section-font-weight: 300;
+        .menu-item {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          height: var(--bs-menu-link-height);
-          max-height: var(--bs-menu-link-height);
-          color: var(--bs-menu-link-color);
-          background: var(--bs-menu-link-bg);
+          flex-direction: column;
+          width: 100%;
+          margin: 0;
           padding: 0 var(--bs-menu-link-padding-x);
-          text-align: left;
-          text-decoration: none;
-          border: 0;
-          outline: 0 !important;
-
-          .menu-item-icon {
+          overflow: hidden;
+          .menu-item-link {
             display: flex;
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
-            width: var(--bs-menu-link-icon-dimension);
-            min-width: var(--bs-menu-link-icon-dimension);
-            height: var(--bs-menu-link-icon-dimension);
-          }
+            height: var(--bs-menu-link-height);
+            max-height: var(--bs-menu-link-height);
+            color: var(--bs-menu-link-color);
+            background: var(--bs-menu-link-bg);
+            text-align: left;
+            text-decoration: none;
+            border: 0;
+            outline: 0 !important;
 
-          .menu-item-text {
-            width: 100%;
-            color: inherit;
-            font-size: var(--bs-menu-link-font-size);
-            font-weight: var(--bs-menu-link-font-weight);
-            margin: 0 var(--bs-menu-link-text-spacer);
-            padding: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
+            &.active {
+              background-color: #fafbfc;
+              background-repeat: no-repeat;
+              background-origin: padding-box;
+              border-radius: 15px;
+              color: #000000;
+            }
 
-          .menu-item-addon {
-            white-space: nowrap;
-            margin: 0 var(--bs-menu-link-addon-spacer);
+            .menu-item-icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: var(--bs-menu-link-icon-dimension);
+              min-width: var(--bs-menu-link-icon-dimension);
+              height: var(--bs-menu-link-icon-dimension);
+            }
+
+            .menu-item-text {
+              width: 100%;
+              color: inherit;
+              font-size: var(--bs-menu-link-font-size);
+              font-weight: var(--bs-menu-link-font-weight);
+              margin: 0 var(--bs-menu-link-text-spacer);
+              padding: 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            .menu-item-addon {
+              white-space: nowrap;
+              margin: 0 var(--bs-menu-link-addon-spacer);
+            }
           }
         }
 
