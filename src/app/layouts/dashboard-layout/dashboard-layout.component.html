@@ -1,49 +1,197 @@
-<div class="dashboard-container">
-  <div class="sidebar">
-    <div class="sidebar-logo">Legacy FA</div>
+<div
+  class="dashboard-container aside-active"
+  [ngClass]="{
+    'aside-desktop-maximized': desktopMax,
+    'aside-desktop-minimized': !desktopMax,
+    'aside-mobile-maximized': mobileMax,
+    'aside-mobile-minimized': !mobileMax
+  }"
+>
+  <div class="sidebar" [ngClass]="desktopMax ? '' : 'sidebar-hover'">
+    <div class="sidebar-header">
+      <h1 class="sidebar-header-title">Legacy FA</h1>
+      <div class="sidebar-header-addon">
+        <button
+          (click)="openMenuDesktop()"
+          class="sidebar-pin sidebar-addon-desktop"
+        >
+          <fa-icon *ngIf="!desktopMax" [icon]="faPin"></fa-icon>
+          <fa-icon *ngIf="desktopMax" [icon]="faXmark"></fa-icon>
+        </button>
+        <button
+          (click)="closeMenuMobile()"
+          class="sidebar-pin sidebar-addon-mobile"
+        >
+          <fa-icon [icon]="faXmark"></fa-icon>
+        </button>
+      </div>
+    </div>
     <span class="sidebar-line"></span>
 
     <div class="sidebar-menu">
-      <ul>
-        <li class="menu-list">
-          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li class="menu-list" *ngIf="['admin', 'agent'].includes(userRole)">
-          <a routerLink="/agent" routerLinkActive="active">Agent</a>
-        </li>
-        <li class="menu-list">
-          <a routerLink="/submmit" routerLinkActive="active">Submmit</a>
-        </li>
-        <li class="menu-list" *ngIf="['admin', 'staff'].includes(userRole)">
-          <a routerLink="/payroll" routerLinkActive="active">Payroll</a>
-        </li>
-        <li class="menu-list" *ngIf="['admin'].includes(userRole)">
-          <a routerLink="/staff" routerLinkActive="active">Staff</a>
-        </li>
-      </ul>
-    </div>
+      <div class="menu">
+        <div class="menu-item">
+          <a
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">Dashboard</span>
+            <div class="menu-item-addon">
+              <span class="badge badge-success">New</span>
+            </div>
+          </a>
+        </div>
+        <div class="menu-section">
+          <div class="menu-section-icon">
+            <fa-icon [icon]="faEllipsis"></fa-icon>
+          </div>
+          <h2 class="menu-section-text">MAIN MENU</h2>
+        </div>
 
-    <div class="sidebar-footer">
-      <a (click)="logout()"> Something </a>
-    </div>
-  </div>
-  <div class="main">
-    <div class="main__header">
-      <div class="main__header-title">Title</div>
-      <div class="main__header-setting">
-        <button class="btn-setting" (click)="settingOpen()">button</button>
-        <div class="setting__container" [ngClass]="{ 'opacity-1': setting }">
-          <button class="setting__container-btn">rofile</button>
-          <button class="setting__container-btn">Account Settings</button>
-          <button class="setting__container-btn">Disable Alerts</button>
-          <button class="setting__container-btn" (click)="logout()">
-            Sign Out
+        <div class="menu-item">
+          <a routerLink="/" routerLinkActive="active" class="menu-item-link">
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faFile"></fa-icon>
+            </div>
+            <span class="menu-item-text">EPFR</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a
+            routerLink="/dummy"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">Submission</span>
+            <div class="menu-item-addon">
+              <span class="badge badge-success">New</span>
+            </div>
+          </a>
+        </div>
+        <div class="menu-item">
+          <button class="menu-item-link menu-item-toggle">
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faUser"></fa-icon>
+            </div>
+            <span class="menu-item-text">Client</span>
+            <div class="menu-item-addon">
+              <fa-icon [icon]="faAngleRight"></fa-icon>
+            </div>
           </button>
+        </div>
+        <div class="menu-item">
+          <a
+            routerLink="/dummy"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">Product</span>
+          </a>
+        </div>
+        <div class="menu-section">
+          <div class="menu-section-icon">
+            <fa-icon [icon]="faEllipsis"></fa-icon>
+          </div>
+          <h2 class="menu-section-text">SUPPORT</h2>
+        </div>
+        <div class="menu-item">
+          <a
+            routerLink="/dummy"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">Provider</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a
+            routerLink="/dummy"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">Payroll</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a
+            routerLink="/dummy"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">User Account</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a
+            routerLink="/dummy"
+            routerLinkActive="active"
+            class="menu-item-link"
+          >
+            <div class="menu-item-icon">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </div>
+            <span class="menu-item-text">Sales Associates</span>
+          </a>
         </div>
       </div>
     </div>
-    <div class="main__content">
+
+    <div class="sidebar-footer">
+      <a (click)="logout()"> Footer </a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="header">
+      <div class="header_left">
+        <button (click)="openMenuMobile()" class="openmenu-icon">
+          <fa-icon [icon]="faBars"></fa-icon>
+        </button>
+        <div class="header-title">Legacy FA</div>
+      </div>
+
+      <div class="header-setting">
+        <button class="header-notif">
+          <fa-icon [icon]="faBell"></fa-icon>
+        </button>
+        <button class="header-profile">
+          <div class="profile-pic"><fa-icon [icon]="faUserTie"></fa-icon></div>
+          <div class="profile-info">
+            yoginugraha <br />
+            <span class="profile-mail">yoginugraha19@gmail.com </span>
+          </div>
+          <div class="setting__container" [ngClass]="{ 'opacity-1': setting }">
+            <button class="setting__container-btn">rofile</button>
+            <button class="setting__container-btn">Account Settings</button>
+            <button class="setting__container-btn">Disable Alerts</button>
+            <button class="setting__container-btn" (click)="logout()">
+              Sign Out
+            </button>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="content">
       <router-outlet></router-outlet>
     </div>
+    <div class="footer"></div>
   </div>
 </div>
