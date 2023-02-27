@@ -11,9 +11,18 @@
     <div class="sidebar-header">
       <h1 class="sidebar-header-title">Legacy FA</h1>
       <div class="sidebar-header-addon">
-        <button (click)="openMenuDesktop()" class="sidebar-pin">
+        <button
+          (click)="openMenuDesktop()"
+          class="sidebar-pin sidebar-addon-desktop"
+        >
           <fa-icon *ngIf="!desktopMax" [icon]="faPin"></fa-icon>
           <fa-icon *ngIf="desktopMax" [icon]="faXmark"></fa-icon>
+        </button>
+        <button
+          (click)="closeMenuMobile()"
+          class="sidebar-pin sidebar-addon-mobile"
+        >
+          <fa-icon [icon]="faXmark"></fa-icon>
         </button>
       </div>
     </div>

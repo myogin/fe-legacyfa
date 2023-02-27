@@ -52,6 +52,17 @@
             cursor: pointer;
             color: #ffffff;
           }
+          &.sidebar-addon-desktop {
+            display: none;
+          }
+          @media (min-width: 1025px) {
+            &.sidebar-addon-desktop {
+              display: block;
+            }
+            &.sidebar-addon-mobile {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -189,6 +200,10 @@
           border-radius: 15px;
           background-color: #f4f5f9;
           color: #9ba8b9;
+
+          @media (min-width: 1025px) {
+            display: none;
+          }
         }
         .header-title {
           padding-left: 1rem;

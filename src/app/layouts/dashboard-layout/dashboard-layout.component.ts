@@ -66,5 +66,9 @@ export class DashboardLayoutComponent implements OnInit {
   openMenuMobile() {
     this.mobileMax = !this.mobileMax;
   }
+
+  closeMenuMobile() {
+    this.mobileMax = false;
+  }
   sideHover(con: boolean): any {}
 }
