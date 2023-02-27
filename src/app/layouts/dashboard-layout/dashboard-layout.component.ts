@@ -8,6 +8,9 @@ import {
   faAngleRight,
   faAngleDown,
   faEllipsisH,
+  faXmark,
+  faBell,
+  faUserTie,
 } from '@fortawesome/free-solid-svg-icons';
 import { faFile, faUser } from '@fortawesome/free-regular-svg-icons';
 @Component({
@@ -28,7 +31,12 @@ export class DashboardLayoutComponent implements OnInit {
   faFile = faFile;
   faUser = faUser;
   faEllipsis = faEllipsisH;
-
+  faXmark = faXmark;
+  faBell = faBell;
+  faUserTie = faUserTie;
+  // toggle menu
+  desktopMax: boolean = true;
+  mobileMax: boolean = false;
   constructor(
     private nbTokenService: NbTokenService,
     private router: Router,
@@ -48,4 +56,15 @@ export class DashboardLayoutComponent implements OnInit {
     // });
     this.authService.logout('email');
   }
+
+  openMenuDesktop() {
+    console.log('pin cliked');
+
+    this.desktopMax = !this.desktopMax;
+  }
+
+  openMenuMobile() {
+    this.mobileMax = !this.mobileMax;
+  }
+  sideHover(con: boolean): any {}
 }
