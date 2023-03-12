@@ -35,7 +35,7 @@ export class DashboardLayoutComponent implements OnInit {
   faBell = faBell;
   faUserTie = faUserTie;
   // toggle menu
-  desktopMax: boolean = true;
+  desktopMax: boolean = false;
   mobileMax: boolean = false;
   constructor(
     private nbTokenService: NbTokenService,
