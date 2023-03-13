@@ -1,3 +1,18 @@
-<p>dashboard works!</p>
-
-<!-- <button (click)="testRequest()">Test Interceptor</button> -->
+<div class="epfr-list">
+  <h1>EPFR List</h1>
+  <div class="border-top" style="margin-bottom: 1rem !important"></div>
+  <div class="col-md-12 mb-3" style="margin-top: 10px">
+    <ngx-datatable
+      class="material"
+      [rows]="rows"
+      [columns]="columns"
+      [sortType]="SortType.multi"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="50"
+      [scrollbarV]="true"
+    >
+    </ngx-datatable>
+  </div>
+</div>
