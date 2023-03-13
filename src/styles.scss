@@ -119,6 +119,7 @@ button {
   outline: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: transparent;
 }
 
 img {
@@ -162,7 +163,6 @@ img {
 /* Buttons */
 .button {
   display: inline-block;
-  background-color: var(--title-color);
   color: var(--container-color);
   padding: 1.25rem 2rem;
   border-radius: 1rem;

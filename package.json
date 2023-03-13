@@ -28,6 +28,7 @@
     "@nebular/auth": "^10.0.0",
     "@nebular/eva-icons": "10.0.0",
     "@nebular/theme": "^10.0.0",
+    "@swimlane/ngx-datatable": "^20.1.0",
     "eva-icons": "^1.1.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
