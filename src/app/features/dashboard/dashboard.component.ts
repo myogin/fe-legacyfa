@@ -13,21 +13,23 @@ export class DashboardComponent implements OnInit {
   faCopy = faCopy;
   faEdit = faPenToSquare;
   faTrash = faTrash;
+
   rows = [];
+
+  columns = [{ name: 'Company' }, { name: 'Name' }, { name: 'Gender' }];
 
   ColumnMode = ColumnMode;
   SortType = SortType;
 
-  columns: any[] = [];
   constructor() {
     this.fetch((data: any) => {
-      this.rows = data.pfr_list;
+      this.rows = data;
     });
   }
 
   fetch(cb: any) {
     const req = new XMLHttpRequest();
-    req.open('GET', `http://167.71.199.94:8200/api/pfr-list`);
+    req.open('GET', `assets/data/company.json`);
 
     req.onload = () => {
       const data = JSON.parse(req.response);
@@ -36,14 +38,5 @@ export class DashboardComponent implements OnInit {
 
     req.send();
   }
-
-  ngOnInit(): void {
-    this.columns = [
-      { prop: 'uuid', name: 'Id' },
-      { prop: 'client.name', name: 'Client Name' },
-      { prop: 'type', name: 'Type' },
-      { prop: 'pfr_status', name: 'Status' },
-      { prop: 'action', name: 'Actions' },
-    ];
-  }
+  ngOnInit(): void {}
 }
